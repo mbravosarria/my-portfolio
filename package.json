@@ -5,7 +5,7 @@
   "version": "0.1.0",
   "private": true,
   "license": "MIT",
-  "homepage": "YOUR_GIT_REPO_URL",
+  "homepage": "https://github.com/mbravosarria/my-portfolio",
   "engines": {
     "node": ">=18.12.1",
     "npm": ">=8.19.2",
