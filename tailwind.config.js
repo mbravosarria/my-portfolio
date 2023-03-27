@@ -10,6 +10,9 @@ module.exports = {
       lg: '1200px',
       xl: '1536px',
     },
+    fontFamily: {
+      'dm-sans': ['"DM Sans"', 'sans-serif'],
+    },
   },
   plugins: [],
 };
