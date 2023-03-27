@@ -44,11 +44,14 @@
     "@storybook/manager-webpack5": "^6.5.16",
     "@storybook/react": "^6.5.16",
     "@storybook/testing-library": "^0.0.13",
+    "autoprefixer": "^10.4.14",
     "babel-loader": "^8.3.0",
     "cross-env": "^7.0.3",
     "eslint-plugin-storybook": "^0.6.11",
     "husky": "8.0.3",
-    "prettier": "2.8.7"
+    "postcss": "^8.4.21",
+    "prettier": "2.8.7",
+    "tailwindcss": "^3.2.7"
   },
   "resolutions": {
     "webpack": "^5"
