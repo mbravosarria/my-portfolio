@@ -1,0 +1,20 @@
+{
+  "name": "my-portfolio",
+  "author": "Michel Bravo",
+  "description": "Online portfolio to show my work experience through my completed projects and my skills",
+  "version": "0.1.0",
+  "private": true,
+  "license": "MIT",
+  "homepage": "YOUR_GIT_REPO_URL",
+  "engines": {
+    "node": ">=18.12.1",
+    "npm": ">=8.19.2",
+    "yarn": "please-use-npm"
+  },
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  }
+}
