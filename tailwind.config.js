@@ -15,7 +15,7 @@ module.exports = {
     },
     colors: {
       'primary-color': '#edf2f8',
-      'secondary-color': '#313bac',
+      'secondary-color': '#0074ff',
       'black-color': '#030303',
       'lightGray-color': '#e4e4e4',
       'gray-color': '#6b7688',
