@@ -1,7 +1,8 @@
-import PrimaryButton from '@/components/buttons/primary/PrimaryButton';
 import Head from 'next/head';
 import Image from 'next/image';
 import { useRouter } from 'next/router';
+
+import PrimaryButton from '@/components/buttons/primary/PrimaryButton';
 
 const PageNotFound = () => {
   const router = useRouter();

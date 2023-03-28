@@ -21,6 +21,7 @@ module.exports = {
       'gray-color': '#6b7688',
       'brown-color': '#46364a',
       'white-color': '#ffffff',
+      'gold-color': '#ffc727',
     },
   },
   plugins: [],
