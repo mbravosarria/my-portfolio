@@ -24,7 +24,7 @@ This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-opti
 
 ## Git Hooks
 
-You must install husky:
+You must install husky (this action will be executed automatically when the `npm install` command is executed):
 
 ```bash
 npm run prepare
@@ -33,6 +33,10 @@ yarn prepare
 # or
 pnpm prepare
 ```
+
+## Engines
+
+You must use version `18.15.0` of [`nodejs`](https://nodejs.org/en/download/releases) and version `9.5.0` of `npm`
 
 ## Learn More
 
