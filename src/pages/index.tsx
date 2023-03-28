@@ -10,7 +10,6 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
-        <h1 className='underline font-dm-sans'>Hello World!</h1>
       </main>
     </>
   );
