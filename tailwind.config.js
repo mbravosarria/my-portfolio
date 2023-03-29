@@ -15,13 +15,18 @@ module.exports = {
     },
     colors: {
       'primary-color': '#edf2f8',
-      'secondary-color': '#0074ff',
+      'secondary-color': '#00447b',
       'black-color': '#030303',
       'lightGray-color': '#e4e4e4',
       'gray-color': '#6b7688',
       'brown-color': '#46364a',
       'white-color': '#ffffff',
       'gold-color': '#ffc727',
+    },
+    extend: {
+      backgroundImage: {
+        'bg-white': "url('/bgWhite.png')",
+      },
     },
   },
   plugins: [],

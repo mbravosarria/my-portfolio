@@ -1,4 +1,7 @@
+import dynamic from 'next/dynamic';
 import Head from 'next/head';
+
+const Navbar = dynamic(() => import('@/components/navigation/navbar/Navbar'));
 
 const Home = () => {
   return (
@@ -19,7 +22,9 @@ const Home = () => {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/bravos-icon.svg" />
       </Head>
-      <main></main>
+      <main className="bg-primary-color font-dm-sans">
+        <Navbar />
+      </main>
     </>
   );
 };
