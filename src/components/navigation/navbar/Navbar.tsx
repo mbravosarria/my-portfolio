@@ -8,7 +8,7 @@ const Navbar: React.FC<INavbar> = () => {
   const [toggle, setToggle] = useState(false);
 
   return (
-    <nav className="flex w-full items-center justify-between border border-white-color/20 bg-white-color/25 py-4 px-8">
+    <nav className="fixed z-30 flex w-full items-center justify-between border border-white-color/5 bg-white-color/25 py-4 px-8">
       <img
         src="/bravos-icon-text.svg"
         alt="Bravos Dev logo"
