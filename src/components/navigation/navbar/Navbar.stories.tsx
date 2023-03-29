@@ -3,7 +3,7 @@ import Navbar, { INavbar } from './Navbar';
 import { mockNavbarProps } from './Navbar.mocks';
 
 export default {
-  title: 'templates/Navbar',
+  title: 'navigation/Navbar',
   component: Navbar,
   argTypes: {},
 } as ComponentMeta<typeof Navbar>;

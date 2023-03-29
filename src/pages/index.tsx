@@ -2,6 +2,7 @@ import dynamic from 'next/dynamic';
 import Head from 'next/head';
 
 const Navbar = dynamic(() => import('@/components/navigation/navbar/Navbar'));
+const Header = dynamic(() => import('@/components/sections/header/Header'));
 
 const Home = () => {
   return (
@@ -24,6 +25,7 @@ const Home = () => {
       </Head>
       <main className="bg-primary-color font-dm-sans">
         <Navbar />
+        <Header />
       </main>
     </>
   );

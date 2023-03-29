@@ -1,5 +1,4 @@
 import { motion } from 'framer-motion';
-import Image from 'next/image';
 import { useState } from 'react';
 import { HiMenuAlt4, HiX } from 'react-icons/hi';
 
@@ -10,7 +9,7 @@ const Navbar: React.FC<INavbar> = () => {
 
   return (
     <nav className="flex w-full items-center justify-between border border-white-color/20 bg-white-color/25 py-4 px-8">
-      <Image
+      <img
         src="/bravos-icon-text.svg"
         alt="Bravos Dev logo"
         width={100}

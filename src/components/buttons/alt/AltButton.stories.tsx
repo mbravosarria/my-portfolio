@@ -3,7 +3,7 @@ import AltButton, { IAltButton } from './AltButton';
 import { mockAltButtonProps } from './AltButton.mocks';
 
 export default {
-  title: 'templates/AltButton',
+  title: 'buttons/AltButton',
   component: AltButton,
   argTypes: {},
 } as ComponentMeta<typeof AltButton>;

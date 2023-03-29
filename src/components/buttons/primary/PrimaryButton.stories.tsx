@@ -3,7 +3,7 @@ import PrimaryButton, { IPrimaryButton } from './PrimaryButton';
 import { mockPrimaryButtonProps } from './PrimaryButton.mocks';
 
 export default {
-  title: 'templates/PrimaryButton',
+  title: 'buttons/PrimaryButton',
   component: PrimaryButton,
   argTypes: {},
 } as ComponentMeta<typeof PrimaryButton>;

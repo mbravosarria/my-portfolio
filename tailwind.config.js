@@ -9,6 +9,7 @@ module.exports = {
       md: '900px',
       lg: '1200px',
       xl: '1536px',
+      '2xl': '2000px',
     },
     fontFamily: {
       'dm-sans': ['"DM Sans"', 'sans-serif'],
@@ -26,6 +27,7 @@ module.exports = {
     extend: {
       backgroundImage: {
         'bg-white': "url('/bgWhite.png')",
+        'bg-img': "url('/bgIMG.png')",
       },
     },
   },
