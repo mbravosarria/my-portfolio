@@ -1,4 +1,3 @@
-import { motion } from 'framer-motion';
 import Image from 'next/image';
 import { AiFillEye, AiFillGithub } from 'react-icons/ai';
 
@@ -20,47 +19,16 @@ const WorkCard: React.FC<IWorkCard> = ({
   tags,
 }) => {
   return (
-    <div className="m-4 flex w-full cursor-pointer flex-col space-y-6 rounded-lg bg-white-color p-4 text-black-color transition-all duration-300 ease-in-out hover:shadow-xl xs:m-8 xs:w-72 2xl:w-[26rem] 2xl:rounded-xl 2xl:p-5">
-      <div className="relative h-full w-full xs:h-72 2xl:h-[26rem]">
+    <div className="m-4 flex w-64 cursor-pointer flex-col space-y-6 rounded-lg bg-white-color p-4 text-black-color transition-all duration-300 ease-in-out hover:shadow-xl xs:m-8 xs:w-72 2xl:w-[26rem] 2xl:rounded-xl 2xl:p-5">
+      <div className="relative h-64 w-full xs:h-72 2xl:h-[26rem]">
         <Image src={image} alt="title" fill className="rounded-lg" />
-
-        <motion.div
-          whileHover={{ opacity: [0, 1] }}
-          transition={{
-            duration: 0.25,
-            ease: 'easeInOut',
-            staggerChildren: 0.5,
-          }}
-          className="absolute top-0 left-0 bottom-0 right-0 h-full w-full rounded-lg bg-black-color/50 opacity-0 transition-all duration-300 ease-in-out"
-        >
-          <a href={codeLink} target="_blank" rel="noreferrer">
-            <motion.div
-              whileInView={{ scale: [0, 1] }}
-              whileHover={{ scale: [1, 0.9] }}
-              transition={{ duration: 0.25 }}
-              className="m-4 flex h-12 w-12 cursor-pointer items-center justify-center rounded-full bg-black-color/50 font-extrabold text-white-color transition-all duration-300 ease-in-out"
-            >
-              <AiFillGithub className="h-1/2 w-1/2 text-white-color" />
-            </motion.div>
-          </a>
-          <a href={projectLink} target="_blank" rel="noreferrer">
-            <motion.div
-              whileInView={{ scale: [0, 1] }}
-              whileHover={{ scale: [1, 0.9] }}
-              transition={{ duration: 0.25 }}
-              className="m-4 flex h-12 w-12 cursor-pointer items-center justify-center rounded-full bg-black-color/50 font-extrabold text-white-color transition-all duration-300 ease-in-out"
-            >
-              <AiFillEye className="h-1/2 w-1/2 text-white-color" />
-            </motion.div>
-          </a>
-        </motion.div>
       </div>
 
-      <div className="flex flex-col space-y-4">
+      <div className="relative flex flex-col items-center justify-center space-y-4">
         <h4 className="text-center text-lg font-semibold">{title}</h4>
         <p className="text-gray-color">{description}</p>
 
-        <div className="flex flex-wrap justify-start gap-3">
+        <div className="flex w-full flex-wrap justify-start gap-3">
           {tags.map((item, index) => (
             <p
               key={`${title}-tag-${index}`}
@@ -69,6 +37,14 @@ const WorkCard: React.FC<IWorkCard> = ({
               #{item}
             </p>
           ))}
+        </div>
+        <div className="absolute -top-20 flex items-center justify-center gap-7 rounded-t-xl bg-white-color py-2 px-4">
+          <a href={projectLink} target="_blank" rel="noreferrer">
+            <AiFillEye className="text-2xl text-gray-color" />
+          </a>
+          <a href={codeLink} target="_blank" rel="noreferrer">
+            <AiFillGithub className="text-2xl text-gray-color" />
+          </a>
         </div>
       </div>
     </div>
