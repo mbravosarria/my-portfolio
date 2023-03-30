@@ -2,7 +2,7 @@ import { motion } from 'framer-motion';
 import { useState } from 'react';
 import { HiMenuAlt4, HiX } from 'react-icons/hi';
 
-export interface INavbar { }
+export interface INavbar {}
 
 const Navbar: React.FC<INavbar> = () => {
   const [toggle, setToggle] = useState(false);

@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 import WorkCard from '../../../components/cards/work/WorkCard';
 
-export interface IWorks { }
+export interface IWorks {}
 
 const works = [
   {
@@ -64,9 +64,9 @@ const Works: React.FC<IWorks> = () => {
   return (
     <section
       id="works"
-      className="pt-24 flex flex-col items-center justify-center bg-primary-color"
+      className="flex flex-col items-center justify-center bg-primary-color pt-24"
     >
-      <h2 className="text-xl sm:text-4xl md:text-5xl font-bold text-black-color">
+      <h2 className="text-xl font-bold text-black-color sm:text-4xl md:text-5xl">
         My <span className="text-secondary-color">Portfolio</span> Section
       </h2>
 

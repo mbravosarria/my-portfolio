@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 
-export interface IHeader { }
+export interface IHeader {}
 
 const scaleVariants = {
   whileInView: {
@@ -16,7 +16,10 @@ const scaleVariants = {
 
 const Header: React.FC<IHeader> = () => {
   return (
-    <section id='home' className="relative flex flex-1 flex-col space-y-16 bg-bg-img bg-cover bg-center bg-repeat px-8 pt-24 sm:px-4 sm:pb-8 lg:flex-row xl:pt-32">
+    <section
+      id="home"
+      className="relative flex flex-1 flex-col space-y-16 bg-bg-img bg-cover bg-center bg-repeat px-8 pt-24 sm:px-4 sm:pb-8 lg:flex-row xl:pt-32"
+    >
       <motion.div
         whileInView={{ x: [-100, 0], opacity: [0, 1] }}
         transition={{ duration: 0.5 }}
