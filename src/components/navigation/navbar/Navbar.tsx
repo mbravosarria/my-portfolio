@@ -2,7 +2,7 @@ import { motion } from 'framer-motion';
 import { useState } from 'react';
 import { HiMenuAlt4, HiX } from 'react-icons/hi';
 
-export interface INavbar {}
+export interface INavbar { }
 
 const Navbar: React.FC<INavbar> = () => {
   const [toggle, setToggle] = useState(false);
@@ -16,7 +16,7 @@ const Navbar: React.FC<INavbar> = () => {
         height={30}
       />
       <ul className="hidden gap-5 md:flex">
-        {['home', 'about', 'contact', 'work', 'skills'].map((item) => (
+        {['home', 'about', 'works', 'skills', 'contact'].map((item) => (
           <li key={`link-${item}`} className="flex items-center">
             <a
               href={`#${item}`}
@@ -44,7 +44,7 @@ const Navbar: React.FC<INavbar> = () => {
               className="my-2 mx-4 h-[35px] w-[35px] text-secondary-color"
             />
             <ul className="m-0 flex h-full w-full flex-col items-start justify-start space-y-4 p-0">
-              {['home', 'about', 'contact', 'work', 'skills'].map((item) => (
+              {['home', 'about', 'works', 'skills', 'contact'].map((item) => (
                 <li key={item} className="m-1">
                   <a
                     href={`#${item}`}

@@ -1,6 +1,6 @@
 import InfoCard from '../../cards/info/InfoCard';
 
-export interface IAbout {}
+export interface IAbout { }
 
 const abouts = [
   {
@@ -32,7 +32,7 @@ const About: React.FC<IAbout> = () => {
       id="about"
       className="flex w-full flex-1 flex-col items-center pt-24"
     >
-      <h2 className="text-2xl font-bold text-black-color">
+      <h2 className="text-xl sm:text-4xl md:text-5xl font-bold text-black-color">
         I Know that <span className="text-secondary-color">Good Design</span>{' '}
         <br />
         means <span className="text-secondary-color">Good Business</span>
