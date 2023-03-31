@@ -5,6 +5,7 @@ const Navbar = dynamic(() => import('@/components/navigation/navbar/Navbar'));
 const Header = dynamic(() => import('@/components/sections/header/Header'));
 const About = dynamic(() => import('@/components/sections/about/About'));
 const Works = dynamic(() => import('@/components/sections/works/Works'));
+const Skills = dynamic(() => import('@/components/sections/skills/Skills'));
 
 const Home = () => {
   return (
@@ -30,6 +31,7 @@ const Home = () => {
         <Header />
         <About />
         <Works />
+        <Skills />
       </main>
     </>
   );
