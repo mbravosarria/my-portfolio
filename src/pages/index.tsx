@@ -6,6 +6,7 @@ const Header = dynamic(() => import('@/components/sections/header/Header'));
 const About = dynamic(() => import('@/components/sections/about/About'));
 const Works = dynamic(() => import('@/components/sections/works/Works'));
 const Skills = dynamic(() => import('@/components/sections/skills/Skills'));
+const Footer = dynamic(() => import('@/components/sections/footer/Footer'));
 
 const Home = () => {
   return (
@@ -32,6 +33,7 @@ const Home = () => {
         <About />
         <Works />
         <Skills />
+        <Footer />
       </main>
     </>
   );

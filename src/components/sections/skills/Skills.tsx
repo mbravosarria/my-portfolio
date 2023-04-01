@@ -137,7 +137,7 @@ const Skills: React.FC<ISkills> = () => {
   return (
     <section
       id="skills"
-      className="flex flex-1 flex-col items-center justify-center pt-24"
+      className="flex flex-1 flex-col items-center justify-center bg-white-color pt-24"
     >
       <h2 className="text-xl font-bold text-black-color sm:text-4xl md:text-5xl">
         Skills & Experiences

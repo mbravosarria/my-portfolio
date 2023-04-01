@@ -30,7 +30,7 @@ const About: React.FC<IAbout> = () => {
   return (
     <section
       id="about"
-      className="flex w-full flex-1 flex-col items-center pt-24"
+      className="flex w-full flex-1 flex-col items-center bg-white-color pt-24"
     >
       <h2 className="text-xl font-bold text-black-color sm:text-4xl md:text-5xl">
         I Know that <span className="text-secondary-color">Good Design</span>{' '}
