@@ -1,13 +1,15 @@
+import { urlFor } from '@/lib/client';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 
 export interface IInfoCard {
-  image: string;
+  image: any;
   title: string;
   description: string;
 }
 
 const InfoCard: React.FC<IInfoCard> = ({ image, title, description }) => {
+  console.log('🚀 ~ file: InfoCard.tsx:12 ~ image:', image);
   return (
     <motion.div
       whileInView={{ opacity: 1 }}
@@ -17,7 +19,7 @@ const InfoCard: React.FC<IInfoCard> = ({ image, title, description }) => {
     >
       <div className="relative h-48 w-full 2xl:h-96">
         <Image
-          src={image}
+          src={urlFor(image).url()}
           alt={`image from ${image}`}
           fill
           className="rounded-2xl"

@@ -3,7 +3,9 @@ import Head from 'next/head';
 
 const Navbar = dynamic(() => import('@/components/navigation/navbar/Navbar'));
 const Header = dynamic(() => import('@/components/sections/header/Header'));
-const About = dynamic(() => import('@/components/sections/about/About'));
+const About = dynamic(() => import('@/components/sections/about/About'), {
+  ssr: false,
+});
 const Works = dynamic(() => import('@/components/sections/works/Works'));
 const Skills = dynamic(() => import('@/components/sections/skills/Skills'));
 const Footer = dynamic(() => import('@/components/sections/footer/Footer'));

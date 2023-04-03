@@ -1,4 +1,3 @@
-
 export interface IExperienceCard {
   date: string;
   role: string;
