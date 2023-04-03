@@ -22,6 +22,8 @@
     "build-storybook": "build-storybook"
   },
   "dependencies": {
+    "@sanity/client": "^5.4.1",
+    "@sanity/image-url": "^1.0.2",
     "@types/node": "18.15.10",
     "@types/react": "18.0.29",
     "@types/react-dom": "18.0.11",
