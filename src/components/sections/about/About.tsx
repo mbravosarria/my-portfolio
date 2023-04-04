@@ -2,7 +2,7 @@ import { client } from '@/lib/client';
 import { useEffect, useState } from 'react';
 import InfoCard from '../../cards/info/InfoCard';
 
-export interface IAbout {}
+export interface IAbout { }
 
 const About: React.FC<IAbout> = () => {
   const [about, setAbout] = useState([]);
@@ -12,11 +12,7 @@ const About: React.FC<IAbout> = () => {
 
     client
       .fetch(query)
-      .then((data) => {
-        console.log('hello');
-        setAbout(data);
-      })
-      .catch((error) => console.log(error));
+      .then((data) => setAbout(data))
   }, []);
 
   return (

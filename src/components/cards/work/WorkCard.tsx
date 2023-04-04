@@ -1,3 +1,4 @@
+import { urlFor } from '@/lib/client';
 import Image from 'next/image';
 import { AiFillEye, AiFillGithub } from 'react-icons/ai';
 
@@ -21,7 +22,7 @@ const WorkCard: React.FC<IWorkCard> = ({
   return (
     <div className="m-4 flex w-64 cursor-pointer flex-col space-y-6 rounded-lg bg-white-color p-4 text-black-color transition-all duration-300 ease-in-out hover:shadow-xl xs:m-8 xs:w-72 2xl:w-[26rem] 2xl:rounded-xl 2xl:p-5">
       <div className="relative h-64 w-full xs:h-72 2xl:h-[26rem]">
-        <Image src={image} alt="title" fill className="rounded-lg" />
+        <Image src={urlFor(image).url()} alt="title" fill className="rounded-lg" />
       </div>
 
       <div className="relative flex flex-col items-center justify-center space-y-4">

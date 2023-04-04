@@ -1,66 +1,21 @@
+import { client } from '@/lib/client';
 import { motion } from 'framer-motion';
+import { useEffect, useState } from 'react';
 import WorkCard from '../../../components/cards/work/WorkCard';
 
-export interface IWorks {}
-
-const works = [
-  {
-    image: '/about-test.png',
-    title: 'Occaecat in voluptate',
-    description:
-      'Eu fugiat reprehenderit nisi officia ea deserunt magna aliquip aliquip. Nisi ipsum ea commodo aliquip excepteur velit ad pariatur. Excepteur mollit ea dolor pariatur ut.',
-    projectLink: 'https://www.google.com',
-    codeLink: 'https://www.google.com',
-    tags: ['React', 'Next js', 'Sanity'],
-  },
-  {
-    image: '/about-test.png',
-    title: 'Occaecat in voluptate',
-    description:
-      'Eu fugiat reprehenderit nisi officia ea deserunt magna aliquip aliquip. Nisi ipsum ea commodo aliquip excepteur velit ad pariatur. Excepteur mollit ea dolor pariatur ut.',
-    projectLink: 'https://www.google.com',
-    codeLink: 'https://www.google.com',
-    tags: ['React', 'Next js', 'Sanity'],
-  },
-  {
-    image: '/about-test.png',
-    title: 'Occaecat in voluptate',
-    description:
-      'Eu fugiat reprehenderit nisi officia ea deserunt magna aliquip aliquip. Nisi ipsum ea commodo aliquip excepteur velit ad pariatur. Excepteur mollit ea dolor pariatur ut.',
-    projectLink: 'https://www.google.com',
-    codeLink: 'https://www.google.com',
-    tags: ['React', 'Next js', 'Sanity'],
-  },
-  {
-    image: '/about-test.png',
-    title: 'Occaecat in voluptate',
-    description:
-      'Eu fugiat reprehenderit nisi officia ea deserunt magna aliquip aliquip. Nisi ipsum ea commodo aliquip excepteur velit ad pariatur. Excepteur mollit ea dolor pariatur ut.',
-    projectLink: 'https://www.google.com',
-    codeLink: 'https://www.google.com',
-    tags: ['React', 'Next js', 'Sanity'],
-  },
-  {
-    image: '/about-test.png',
-    title: 'Occaecat in voluptate',
-    description:
-      'Eu fugiat reprehenderit nisi officia ea deserunt magna aliquip aliquip. Nisi ipsum ea commodo aliquip excepteur velit ad pariatur. Excepteur mollit ea dolor pariatur ut.',
-    projectLink: 'https://www.google.com',
-    codeLink: 'https://www.google.com',
-    tags: ['React', 'Next js', 'Sanity'],
-  },
-  {
-    image: '/about-test.png',
-    title: 'Occaecat in voluptate',
-    description:
-      'Eu fugiat reprehenderit nisi officia ea deserunt magna aliquip aliquip. Nisi ipsum ea commodo aliquip excepteur velit ad pariatur. Excepteur mollit ea dolor pariatur ut.',
-    projectLink: 'https://www.google.com',
-    codeLink: 'https://www.google.com',
-    tags: ['React', 'Next js', 'Sanity'],
-  },
-];
+export interface IWorks { }
 
 const Works: React.FC<IWorks> = () => {
+  const [works, setWorks] = useState([])
+
+  useEffect(() => {
+    const query = '*[_type == "works"]';
+
+    client
+      .fetch(query)
+      .then((data) => setWorks(data))
+  }, []);
+
   return (
     <section
       id="works"
@@ -73,9 +28,9 @@ const Works: React.FC<IWorks> = () => {
       <motion.div
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.5, delayChildren: 0.5 }}
-        className="flex flex-wrap items-center justify-center"
+        className="flex flex-wrap items-start justify-center"
       >
-        {works.map((item, index) => (
+        {works.map((item: any, index: number) => (
           <WorkCard {...{ ...item }} key={`work-${index}`} />
         ))}
       </motion.div>
