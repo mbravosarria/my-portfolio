@@ -2,7 +2,7 @@ import { client } from '@/lib/client';
 import { useEffect, useState } from 'react';
 import InfoCard from '../../cards/info/InfoCard';
 
-export interface IAbout { }
+export interface IAbout {}
 
 const About: React.FC<IAbout> = () => {
   const [about, setAbout] = useState([]);
@@ -10,9 +10,7 @@ const About: React.FC<IAbout> = () => {
   useEffect(() => {
     const query = '*[_type == "about"]';
 
-    client
-      .fetch(query)
-      .then((data) => setAbout(data))
+    client.fetch(query).then((data) => setAbout(data));
   }, []);
 
   return (
@@ -25,7 +23,7 @@ const About: React.FC<IAbout> = () => {
         I do
       </h2>
 
-      <p className="mt-8 w-3/5 font-semibold text-gray-color">
+      <p className="mt-8 w-5/6 text-justify font-semibold text-gray-color lg:w-3/5 lg:text-start">
         Since I started my journey as a software developer, I have done remote
         works for agencies and full-time jobs for companies in the technology
         sector as a developer and as IT specialist. I have creative thinking,

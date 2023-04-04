@@ -3,17 +3,15 @@ import { motion } from 'framer-motion';
 import { useEffect, useState } from 'react';
 import WorkCard from '../../../components/cards/work/WorkCard';
 
-export interface IWorks { }
+export interface IWorks {}
 
 const Works: React.FC<IWorks> = () => {
-  const [works, setWorks] = useState([])
+  const [works, setWorks] = useState([]);
 
   useEffect(() => {
     const query = '*[_type == "works"]';
 
-    client
-      .fetch(query)
-      .then((data) => setWorks(data))
+    client.fetch(query).then((data) => setWorks(data));
   }, []);
 
   return (
