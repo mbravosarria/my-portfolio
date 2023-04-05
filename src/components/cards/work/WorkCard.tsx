@@ -1,6 +1,6 @@
-import { urlFor } from '@/lib/client';
 import Image from 'next/image';
 import { AiFillEye, AiFillGithub } from 'react-icons/ai';
+import { urlFor } from '../../../lib/client';
 
 export interface IWorkCard {
   image: string;

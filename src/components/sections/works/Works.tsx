@@ -1,7 +1,8 @@
-import { client } from '@/lib/client';
+import AppWrap from '@/wrapper/AppWrap';
 import { motion } from 'framer-motion';
 import { useEffect, useState } from 'react';
 import WorkCard from '../../../components/cards/work/WorkCard';
+import { client } from '../../../lib/client';
 
 export interface IWorks {}
 
@@ -17,7 +18,7 @@ const Works: React.FC<IWorks> = () => {
   return (
     <section
       id="works"
-      className="flex flex-col items-center justify-center bg-primary-color pt-24"
+      className="flex min-h-screen w-full flex-col items-center justify-center bg-primary-color py-24"
     >
       <h2 className="text-xl font-bold text-black-color sm:text-4xl md:text-5xl">
         My <span className="text-secondary-color">Portfolio</span> Section
@@ -36,4 +37,4 @@ const Works: React.FC<IWorks> = () => {
   );
 };
 
-export default Works;
+export default AppWrap(Works, 'works');

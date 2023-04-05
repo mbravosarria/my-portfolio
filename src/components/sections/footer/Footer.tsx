@@ -1,5 +1,6 @@
-import { client } from '@/lib/client';
+import AppWrap from '@/wrapper/AppWrap';
 import { useState } from 'react';
+import { client } from '../../../lib/client';
 
 export interface IFooter {}
 
@@ -41,7 +42,7 @@ const Footer: React.FC<IFooter> = () => {
   return (
     <section
       id="contact"
-      className="mb-6 flex w-full flex-1 flex-col items-center justify-center bg-white-color pt-24"
+      className="flex min-h-screen w-full flex-1 flex-col items-center justify-center bg-white-color pt-24 pb-20 md:pb-0"
     >
       <h2 className="text-xl font-bold text-black-color sm:text-4xl md:text-5xl">
         Take A Coffee & Chat With Me
@@ -88,4 +89,4 @@ const Footer: React.FC<IFooter> = () => {
   );
 };
 
-export default Footer;
+export default AppWrap(Footer, 'contact');

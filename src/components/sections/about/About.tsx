@@ -1,5 +1,6 @@
-import { client } from '@/lib/client';
+import AppWrap from '@/wrapper/AppWrap';
 import { useEffect, useState } from 'react';
+import { client } from '../../../lib/client';
 import InfoCard from '../../cards/info/InfoCard';
 
 export interface IAbout {}
@@ -16,7 +17,7 @@ const About: React.FC<IAbout> = () => {
   return (
     <section
       id="about"
-      className="flex w-full flex-1 flex-col items-center bg-white-color pt-24"
+      className="flex min-h-screen w-full flex-1 flex-col items-center bg-white-color pt-24 pb-20 md:pb-0"
     >
       <h2 className="text-xl font-bold text-black-color sm:text-4xl md:text-5xl">
         I’m <span className="text-secondary-color">passionate</span> about what
@@ -40,4 +41,4 @@ const About: React.FC<IAbout> = () => {
   );
 };
 
-export default About;
+export default AppWrap(About, 'about');

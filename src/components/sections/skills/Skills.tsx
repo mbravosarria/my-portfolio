@@ -1,5 +1,6 @@
-import { client } from '@/lib/client';
+import AppWrap from '@/wrapper/AppWrap';
 import { useEffect, useState } from 'react';
+import { client } from '../../../lib/client';
 import ExperienceCard from '../../cards/experience/ExperienceCard';
 import SkillCard from '../../cards/skill/SkillCard';
 
@@ -21,7 +22,7 @@ const Skills: React.FC<ISkills> = () => {
   return (
     <section
       id="skills"
-      className="flex flex-1 flex-col items-center justify-center bg-white-color pt-24"
+      className="flex min-h-screen w-full flex-1 flex-col items-center justify-center bg-white-color pt-24 pb-20 md:pb-0"
     >
       <h2 className="text-xl font-bold text-black-color sm:text-4xl md:text-5xl">
         Skills & Experiences
@@ -42,4 +43,4 @@ const Skills: React.FC<ISkills> = () => {
   );
 };
 
-export default Skills;
+export default AppWrap(Skills, 'skills');

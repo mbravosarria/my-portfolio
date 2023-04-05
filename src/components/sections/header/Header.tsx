@@ -1,3 +1,4 @@
+import AppWrap from '@/wrapper/AppWrap';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 
@@ -18,7 +19,7 @@ const Header: React.FC<IHeader> = () => {
   return (
     <section
       id="home"
-      className="relative flex flex-1 flex-col space-y-16 bg-bg-img bg-cover bg-center bg-repeat px-8 pt-24 sm:px-4 sm:pb-8 lg:flex-row xl:pt-32"
+      className="relative flex min-h-screen w-full flex-1 flex-col space-y-16 bg-bg-img bg-cover bg-center bg-repeat px-8 pt-24 pb-20 sm:px-4 md:pb-8 lg:flex-row xl:pt-32"
     >
       <motion.div
         whileInView={{ x: [-100, 0], opacity: [0, 1] }}
@@ -77,4 +78,4 @@ const Header: React.FC<IHeader> = () => {
   );
 };
 
-export default Header;
+export default AppWrap(Header, 'home');
