@@ -1,4 +1,5 @@
 import AppWrap from '@/wrapper/AppWrap';
+import MotionWrap from '@/wrapper/MotionWrap';
 import { useEffect, useState } from 'react';
 import { client } from '../../../lib/client';
 import InfoCard from '../../cards/info/InfoCard';
@@ -41,4 +42,4 @@ const About: React.FC<IAbout> = () => {
   );
 };
 
-export default AppWrap(About, 'about');
+export default AppWrap(MotionWrap(About), 'about');

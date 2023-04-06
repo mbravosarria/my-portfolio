@@ -1,4 +1,5 @@
 import AppWrap from '@/wrapper/AppWrap';
+import MotionWrap from '@/wrapper/MotionWrap';
 import { motion } from 'framer-motion';
 import { useEffect, useState } from 'react';
 import WorkCard from '../../../components/cards/work/WorkCard';
@@ -37,4 +38,4 @@ const Works: React.FC<IWorks> = () => {
   );
 };
 
-export default AppWrap(Works, 'works');
+export default AppWrap(MotionWrap(Works), 'works');

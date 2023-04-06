@@ -1,4 +1,5 @@
 import AppWrap from '@/wrapper/AppWrap';
+import MotionWrap from '@/wrapper/MotionWrap';
 import { useState } from 'react';
 import { client } from '../../../lib/client';
 
@@ -89,4 +90,4 @@ const Footer: React.FC<IFooter> = () => {
   );
 };
 
-export default AppWrap(Footer, 'contact');
+export default AppWrap(MotionWrap(Footer), 'contact');

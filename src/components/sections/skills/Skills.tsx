@@ -1,4 +1,5 @@
 import AppWrap from '@/wrapper/AppWrap';
+import MotionWrap from '@/wrapper/MotionWrap';
 import { useEffect, useState } from 'react';
 import { client } from '../../../lib/client';
 import ExperienceCard from '../../cards/experience/ExperienceCard';
@@ -43,4 +44,4 @@ const Skills: React.FC<ISkills> = () => {
   );
 };
 
-export default AppWrap(Skills, 'skills');
+export default AppWrap(MotionWrap(Skills), 'skills');
