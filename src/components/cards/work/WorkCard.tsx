@@ -45,12 +45,16 @@ const WorkCard: React.FC<IWorkCard> = ({
           ))}
         </div>
         <div className="absolute -top-20 flex items-center justify-center gap-7 rounded-t-xl bg-white-color py-2 px-4">
-          <a href={projectLink} target="_blank" rel="noreferrer">
-            <AiFillEye className="text-2xl text-gray-color" />
-          </a>
-          <a href={codeLink} target="_blank" rel="noreferrer">
-            <AiFillGithub className="text-2xl text-gray-color" />
-          </a>
+          {projectLink && (
+            <a href={projectLink} target="_blank" rel="noreferrer">
+              <AiFillEye className="text-2xl text-gray-color" />
+            </a>
+          )}
+          {codeLink && (
+            <a href={codeLink} target="_blank" rel="noreferrer">
+              <AiFillGithub className="text-2xl text-gray-color" />
+            </a>
+          )}
         </div>
       </div>
     </div>
