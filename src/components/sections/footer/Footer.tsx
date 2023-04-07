@@ -4,7 +4,7 @@ import { useForm } from 'react-hook-form';
 import AppWrap from '../../../wrapper/AppWrap';
 import MotionWrap from '../../../wrapper/MotionWrap';
 
-export interface IFooter { }
+export interface IFooter {}
 
 const Footer: React.FC<IFooter> = () => {
   const {

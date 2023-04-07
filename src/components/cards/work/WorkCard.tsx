@@ -31,7 +31,7 @@ const WorkCard: React.FC<IWorkCard> = ({
       </div>
 
       <div className="relative flex flex-col items-center justify-center space-y-4">
-        <h4 className="text-center text-lg font-semibold">{title}</h4>
+        <h3 className="text-center text-lg font-semibold">{title}</h3>
         <p className="text-gray-color">{description}</p>
 
         <div className="flex w-full flex-wrap justify-start gap-3">
@@ -46,12 +46,22 @@ const WorkCard: React.FC<IWorkCard> = ({
         </div>
         <div className="absolute -top-20 flex items-center justify-center gap-7 rounded-t-xl bg-white-color py-2 px-4">
           {projectLink && (
-            <a href={projectLink} target="_blank" rel="noreferrer">
+            <a
+              href={projectLink}
+              aria-label="Live Demo"
+              target="_blank"
+              rel="noreferrer"
+            >
               <AiFillEye className="text-2xl text-gray-color" />
             </a>
           )}
           {codeLink && (
-            <a href={codeLink} target="_blank" rel="noreferrer">
+            <a
+              href={codeLink}
+              aria-label="Github Repo"
+              target="_blank"
+              rel="noreferrer"
+            >
               <AiFillGithub className="text-2xl text-gray-color" />
             </a>
           )}
