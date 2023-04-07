@@ -1,9 +1,9 @@
-import { urlFor } from '../../../lib/client';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
+import { urlFor } from '../../../lib/client';
 
 export interface ISkillCard {
-  icon: string;
+  icon: any;
   name: string;
   bgColor: string;
 }

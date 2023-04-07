@@ -1,18 +1,24 @@
-import AppWrap from '@/wrapper/AppWrap';
-import MotionWrap from '@/wrapper/MotionWrap';
 import { useEffect, useState } from 'react';
 import { client } from '../../../lib/client';
+import AppWrap from '../../../wrapper/AppWrap';
+import MotionWrap from '../../../wrapper/MotionWrap';
 import InfoCard from '../../cards/info/InfoCard';
+import InfoCardSkeleton from '../../cards/info/InfoCard.skeleton';
 
 export interface IAbout {}
 
 const About: React.FC<IAbout> = () => {
   const [about, setAbout] = useState([]);
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     const query = '*[_type == "about"]';
+    setLoading(true);
 
-    client.fetch(query).then((data) => setAbout(data));
+    client.fetch(query).then((data) => {
+      setAbout(data);
+      setLoading(false);
+    });
   }, []);
 
   return (
@@ -34,9 +40,14 @@ const About: React.FC<IAbout> = () => {
       </p>
 
       <div className="mt-8 flex flex-wrap items-start justify-center">
-        {about.map((item: any, index: number) => (
-          <InfoCard key={`info-card-${index}`} {...{ ...item }} />
-        ))}
+        {!loading &&
+          about.map((item: any, index: number) => (
+            <InfoCard key={`info-card-${index}`} {...{ ...item }} />
+          ))}
+        {loading &&
+          [1, 2, 3].map((index) => (
+            <InfoCardSkeleton key={`info-card-skeleton-${index}`} />
+          ))}
       </div>
     </section>
   );

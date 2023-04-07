@@ -1,5 +1,5 @@
-import Dots from '@/components/navigation/dots/Dots';
-import SocialMedia from '@/components/navigation/social-media/SocialMedia';
+import Dots from '../components/navigation/dots/Dots';
+import SocialMedia from '../components/navigation/social-media/SocialMedia';
 
 const AppWrap = (Component: any, idName: string, classNames?: string) =>
   function HOC() {

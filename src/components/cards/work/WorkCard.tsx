@@ -3,7 +3,7 @@ import { AiFillEye, AiFillGithub } from 'react-icons/ai';
 import { urlFor } from '../../../lib/client';
 
 export interface IWorkCard {
-  image: string;
+  image: any;
   title: string;
   description: string;
   projectLink: string;

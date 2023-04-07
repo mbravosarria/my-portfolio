@@ -1,7 +1,7 @@
-import AppWrap from '@/wrapper/AppWrap';
-import MotionWrap from '@/wrapper/MotionWrap';
 import { useState } from 'react';
 import { client } from '../../../lib/client';
+import AppWrap from '../../../wrapper/AppWrap';
+import MotionWrap from '../../../wrapper/MotionWrap';
 
 export interface IFooter {}
 

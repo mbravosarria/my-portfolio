@@ -1,19 +1,25 @@
-import AppWrap from '@/wrapper/AppWrap';
-import MotionWrap from '@/wrapper/MotionWrap';
 import { motion } from 'framer-motion';
 import { useEffect, useState } from 'react';
-import WorkCard from '../../../components/cards/work/WorkCard';
 import { client } from '../../../lib/client';
+import AppWrap from '../../../wrapper/AppWrap';
+import MotionWrap from '../../../wrapper/MotionWrap';
+import WorkCard from '../../cards/work/WorkCard';
+import WorkCardSkeleton from '../../cards/work/WorkCard.skeleton';
 
 export interface IWorks {}
 
 const Works: React.FC<IWorks> = () => {
   const [works, setWorks] = useState([]);
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     const query = '*[_type == "works"]';
+    setLoading(true);
 
-    client.fetch(query).then((data) => setWorks(data));
+    client.fetch(query).then((data) => {
+      setLoading(false);
+      setWorks(data);
+    });
   }, []);
 
   return (
@@ -30,9 +36,14 @@ const Works: React.FC<IWorks> = () => {
         transition={{ duration: 0.5, delayChildren: 0.5 }}
         className="flex flex-wrap items-start justify-center"
       >
-        {works.map((item: any, index: number) => (
-          <WorkCard {...{ ...item }} key={`work-${index}`} />
-        ))}
+        {!loading &&
+          works.map((item: any, index: number) => (
+            <WorkCard {...{ ...item }} key={`work-${index}`} />
+          ))}
+        {loading &&
+          [1, 2, 3, 4].map((index) => (
+            <WorkCardSkeleton key={`work-card-skeleton-${index}`} />
+          ))}
       </motion.div>
     </section>
   );

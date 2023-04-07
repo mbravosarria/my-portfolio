@@ -1,4 +1,5 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react';
+import 'react-loading-skeleton/dist/skeleton.css';
 import About, { IAbout } from './About';
 import { mockAboutProps } from './About.mocks';
 

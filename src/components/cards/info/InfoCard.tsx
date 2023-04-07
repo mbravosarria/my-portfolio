@@ -9,7 +9,6 @@ export interface IInfoCard {
 }
 
 const InfoCard: React.FC<IInfoCard> = ({ image, title, description }) => {
-  console.log('🚀 ~ file: InfoCard.tsx:12 ~ image:', image);
   return (
     <motion.div
       whileInView={{ opacity: 1 }}

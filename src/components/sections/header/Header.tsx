@@ -1,7 +1,7 @@
-import AppWrap from '@/wrapper/AppWrap';
-import MotionWrap from '@/wrapper/MotionWrap';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
+import AppWrap from '../../../wrapper/AppWrap';
+import MotionWrap from '../../../wrapper/MotionWrap';
 
 export interface IHeader {}
 

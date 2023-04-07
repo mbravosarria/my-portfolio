@@ -1,6 +1,7 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 import InfoCard, { IInfoCard } from './InfoCard';
 import { mockInfoCardProps } from './InfoCard.mocks';
+import InfoCardSkeleton from './InfoCard.skeleton';
 
 export default {
   title: 'cards/InfoCard',
@@ -9,7 +10,10 @@ export default {
 } as ComponentMeta<typeof InfoCard>;
 
 const Template: ComponentStory<typeof InfoCard> = (args) => (
-  <InfoCard {...args} />
+  <div className="flex flex-row">
+    <InfoCard {...args} />
+    <InfoCardSkeleton />
+  </div>
 );
 
 export const Base = Template.bind({});
