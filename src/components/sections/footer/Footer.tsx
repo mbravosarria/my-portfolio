@@ -1,43 +1,36 @@
+import { client } from '@/lib/client';
 import { useState } from 'react';
-import { client } from '../../../lib/client';
+import { useForm } from 'react-hook-form';
 import AppWrap from '../../../wrapper/AppWrap';
 import MotionWrap from '../../../wrapper/MotionWrap';
 
-export interface IFooter {}
+export interface IFooter { }
 
 const Footer: React.FC<IFooter> = () => {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    message: '',
-  });
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+    reset,
+  } = useForm();
   const [isFormSubmitted, setIsFormSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
 
-  const { name, email, message } = formData;
-
-  const handleChangeInput = (e: any) => {
-    const { name, value } = e.target;
-    setFormData({ ...formData, [name]: value });
-  };
-
-  const handleSubmit = () => {
+  const onSubmit = async (data: any) => {
     setLoading(true);
 
     const contact = {
       _type: 'contact',
-      name: formData.name,
-      email: formData.email,
-      message: formData.message,
+      name: data.name,
+      email: data.email,
+      message: data.message,
     };
 
-    client
-      .create(contact)
-      .then(() => {
-        setLoading(false);
-        setIsFormSubmitted(true);
-      })
-      .catch((err) => console.log(err));
+    await client.create(contact).then(() => {
+      setLoading(false);
+      setIsFormSubmitted(true);
+      reset();
+    });
   };
 
   return (
@@ -49,38 +42,57 @@ const Footer: React.FC<IFooter> = () => {
         Take A Coffee & Chat With Me
       </h2>
       {!isFormSubmitted ? (
-        <div className="mt-8 flex w-full flex-col items-center justify-center py-4 px-8 md:w-3/5">
+        <form
+          onSubmit={handleSubmit(onSubmit)}
+          className="mt-8 flex w-full flex-col items-start justify-center py-4 px-8 md:w-3/5"
+        >
           <input
             className="my-3 w-full cursor-text rounded-xl border-0 bg-primary-color p-3 text-secondary-color outline-none transition-all duration-300 ease-in-out hover:shadow-lg hover:shadow-primary-color"
             type="text"
-            name="name"
-            value={name}
+            {...register('name', { required: true })}
             placeholder="Your Name"
-            onChange={handleChangeInput}
           />
+          {errors.name && (
+            <span className="text-sm font-semibold text-[#B12024]">
+              Please provide a name
+            </span>
+          )}
           <input
             className="my-3 w-full cursor-text rounded-xl border-0 bg-primary-color p-3 text-secondary-color outline-none transition-all duration-300 ease-in-out hover:shadow-lg hover:shadow-primary-color"
             type="email"
-            name="email"
-            value={email}
+            {...register('email', {
+              required: 'Please provide a valid email',
+              pattern: {
+                value: /\S+@\S+\.\S+/,
+                message: 'Please provide a valid email',
+              },
+            })}
             placeholder="Your Email"
-            onChange={handleChangeInput}
           />
+          {errors.email && (
+            <span className="text-sm font-semibold text-[#B12024]">
+              *{errors.email.message?.toString()}
+            </span>
+          )}
           <textarea
             className="my-3 h-44 w-full cursor-text rounded-xl border-0 bg-primary-color p-3 text-secondary-color outline-none transition-all duration-300 ease-in-out hover:shadow-lg hover:shadow-primary-color"
-            name="message"
-            value={message}
+            {...register('message', { required: true })}
             placeholder="Your Message"
-            onChange={handleChangeInput}
           />
-          <button
-            className="mt-8 w-full cursor-pointer rounded-xl border-0 bg-secondary-color py-4 px-8 font-medium text-white-color outline-none hover:bg-[#2430af] md:w-1/2"
-            type="button"
-            onClick={handleSubmit}
-          >
-            {!loading ? 'Send Message' : 'Sending...'}
-          </button>
-        </div>
+          {errors.message && (
+            <span className="text-sm font-semibold text-[#B12024]">
+              Please provide a message
+            </span>
+          )}
+          <div className="flex w-full items-center justify-center">
+            <button
+              className="mt-8 w-full cursor-pointer rounded-xl border-0 bg-secondary-color py-4 px-8 font-medium text-white-color outline-none hover:bg-[#2430af] md:w-1/2"
+              type="submit"
+            >
+              {!loading ? 'Send Message' : 'Sending...'}
+            </button>
+          </div>
+        </form>
       ) : (
         <h3 className="my-16 text-xl font-semibold text-secondary-color">
           Thank you for getting in touch!

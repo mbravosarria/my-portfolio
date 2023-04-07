@@ -1,11 +1,11 @@
-import ExperienceCardSkeleton from '@/components/cards/experience/ExperienceCard.skeleton';
-import SkillCardSkeleton from '@/components/cards/skill/SkillCard.skeleton';
 import { useEffect, useState } from 'react';
 import { client } from '../../../lib/client';
 import AppWrap from '../../../wrapper/AppWrap';
 import MotionWrap from '../../../wrapper/MotionWrap';
 import ExperienceCard from '../../cards/experience/ExperienceCard';
+import ExperienceCardSkeleton from '../../cards/experience/ExperienceCard.skeleton';
 import SkillCard from '../../cards/skill/SkillCard';
+import SkillCardSkeleton from '../../cards/skill/SkillCard.skeleton';
 
 export interface ISkills {}
 
