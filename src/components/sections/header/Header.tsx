@@ -20,7 +20,7 @@ const Header: React.FC<IHeader> = () => {
   return (
     <section
       id="home"
-      className="relative flex min-h-screen w-full flex-1 flex-col space-y-16 bg-bg-img bg-cover bg-center bg-repeat px-8 pt-24 pb-20 sm:px-4 md:pb-8 lg:flex-row xl:pt-32"
+      className="relative flex min-h-screen w-full flex-1 flex-col space-y-16 bg-bg-img bg-cover bg-center bg-repeat px-8 pt-24 pb-20 sm:px-14 md:pb-8 lg:flex-row xl:pt-32"
     >
       <motion.div
         whileInView={{ x: [-100, 0], opacity: [0, 1] }}
@@ -55,7 +55,12 @@ const Header: React.FC<IHeader> = () => {
           className="absolute bottom-0 z-0 h-72 w-72 md:h-96 md:w-96"
         />
         <div className="relative z-10 h-72 w-72 object-contain md:h-96 md:w-96">
-          <Image src="/profile.png" alt="profile background" fill />
+          <Image
+            src="/profile.jpeg"
+            alt="profile background"
+            fill
+            className="rounded-full"
+          />
         </div>
       </motion.div>
 

@@ -39,7 +39,7 @@ const About: React.FC<IAbout> = () => {
         perpetually working on improving my chops
       </p>
 
-      <div className="mt-8 flex flex-wrap items-start justify-center">
+      <div className="mt-8 flex w-full flex-wrap items-start justify-center sm:w-5/6">
         {!loading &&
           about.map((item: any, index: number) => (
             <InfoCard key={`info-card-${index}`} {...{ ...item }} />

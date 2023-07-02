@@ -1,6 +1,6 @@
-import { urlFor } from '../../../lib/client';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
+import { urlFor } from '../../../lib/client';
 
 export interface IInfoCard {
   image: any;
@@ -14,7 +14,7 @@ const InfoCard: React.FC<IInfoCard> = ({ image, title, description }) => {
       whileInView={{ opacity: 1 }}
       whileHover={{ scale: 1.1 }}
       transition={{ duration: 0.5, type: 'tween' }}
-      className="m-8 flex w-48 flex-col items-start justify-start 2xl:w-96"
+      className="m-8 flex w-full flex-col items-start justify-start sm:w-72"
     >
       <div className="relative h-48 w-full 2xl:h-96">
         <Image

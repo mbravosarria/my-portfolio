@@ -20,8 +20,8 @@ const WorkCard: React.FC<IWorkCard> = ({
   tags,
 }) => {
   return (
-    <div className="m-4 flex w-64 cursor-pointer flex-col space-y-6 rounded-lg bg-white-color p-4 text-black-color transition-all duration-300 ease-in-out hover:shadow-xl xs:m-8 xs:w-72 2xl:w-[26rem] 2xl:rounded-xl 2xl:p-5">
-      <div className="relative h-64 w-full xs:h-72 2xl:h-[26rem]">
+    <div className="m-4 flex h-auto w-64 cursor-pointer flex-col space-y-6 rounded-lg bg-white-color p-4 text-black-color transition-all duration-300 ease-in-out hover:shadow-xl xs:m-8 xs:w-96 md:h-[30rem] 2xl:w-[26rem] 2xl:rounded-xl 2xl:p-5">
+      <div className="relative aspect-video w-full">
         <Image
           src={urlFor(image).url()}
           alt="title"
